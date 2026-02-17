@@ -1,0 +1,440 @@
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto Condensed', sans-serif;
+    background: #f5f5f5;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* ========== SPLASH SCREEN ========== */
+.splash-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.5s ease, visibility 0.5s ease;
+}
+
+.splash-screen.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.splash-card {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.splash-top {
+    flex: 1;
+    background: #1e3c72;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    padding-bottom: 40px;
+}
+
+.logo-circle {
+    width: 200px;
+    height: 200px;
+    background: white;
+    border-radius: 50%;
+    border: 12px solid #d64545;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.medical-logo {
+    width: 100%;
+    height: 100%;
+}
+
+.splash-bottom {
+    flex: 1;
+    background: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    padding-top: 40px;
+    text-align: center;
+}
+
+.company-name {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #1e3c72;
+    margin-bottom: 10px;
+    line-height: 1.3;
+}
+
+.brand-name {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #d64545;
+}
+
+/* ========== MAIN CONTACT CARD ========== */
+.main-page {
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.8s ease, visibility 0.8s ease;
+    width: 100%;
+    min-height: 100vh;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.main-page.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.contact-card {
+    width: 100%;
+    max-width: 650px;
+    background: white;
+    border-radius: 20px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+/* Card Header with Gradient */
+.card-header {
+    background: linear-gradient(135deg, #c21365 0%, #7d3f98 50%, #2855ae 100%);
+    padding: 40px 30px 30px;
+    text-align: center;
+    position: relative;
+}
+
+.profile-photo {
+    width: 120px;
+    height: 120px;
+    margin: 0 auto 20px;
+    border-radius: 50%;
+    border: 5px solid white;
+    overflow: hidden;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+}
+
+.profile-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.doctor-name {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: white;
+    margin-bottom: 5px;
+}
+
+.doctor-title {
+    font-size: 1rem;
+    color: rgba(255, 255, 255, 0.9);
+    font-weight: 300;
+    margin-bottom: 25px;
+}
+
+/* Action Buttons */
+.action-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.action-btn {
+    width: 50px;
+    height: 50px;
+    background: white;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #5C6BC0;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.15);
+    text-decoration: none;
+}
+
+.action-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.25);
+}
+
+.action-btn svg {
+    width: 24px;
+    height: 24px;
+}
+
+/* Card Body */
+.card-body {
+    padding: 30px;
+}
+
+.contact-item {
+    display: flex;
+    gap: 15px;
+    padding: 15px 0;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.contact-item:last-of-type {
+    border-bottom: none;
+}
+
+.contact-icon {
+    width: 24px;
+    height: 24px;
+    color: #9e9e9e;
+    flex-shrink: 0;
+    margin-top: 2px;
+}
+
+.contact-info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.contact-label {
+    font-size: 0.75rem;
+    color: #9e9e9e;
+    font-weight: 400;
+    text-transform: capitalize;
+    letter-spacing: 0.3px;
+}
+
+.contact-value {
+    font-size: 0.95rem;
+    color: #212121;
+    text-decoration: none;
+    font-weight: 400;
+    line-height: 1.5;
+}
+
+a.contact-value:hover {
+    color: #2563eb;
+}
+
+/* Map Button - Modernized */
+.map-button {
+    display: inline-block;
+    font-size: 0.85rem;
+    color: #2563eb;
+    background: #e8f0fe;
+    padding: 8px 16px;
+    border-radius: 6px;
+    text-decoration: none;
+    margin-top: 8px;
+    font-weight: 500;
+    transition: all 0.2s ease;
+    width: 8.5rem;
+}
+
+.map-button:hover {
+    background: #d2e3fc;
+    transform: translateX(2px);
+}
+
+/* Add Contact Button */
+.add-contact-btn {
+    width: 100%;
+    background: #0d47a1;
+    color: white;
+    border: none;
+    padding: 14px 20px;
+    border-radius: 10px;
+    font-size: 1rem;
+    font-weight: 600;
+    font-family: 'Roboto Condensed', sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 20px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 12px rgba(13, 71, 161, 0.3);
+}
+
+.add-contact-btn:hover {
+    background: #1565c0;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(13, 71, 161, 0.4);
+}
+
+.add-contact-btn:active {
+    transform: translateY(0);
+}
+
+.add-contact-btn svg {
+    width: 20px;
+    height: 20px;
+}
+
+/* Social Section */
+.social-section {
+    margin-top: 10px;
+    padding-top: 20px;
+    border-top: 1px solid #f0f0f0;
+}
+
+.social-section h3 {
+    font-size: 0.9rem;
+    color: #424242;
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+
+.social-link {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 15px;
+    background: #f9f9f9;
+    border-radius: 10px;
+    text-decoration: none;
+    color: #212121;
+    transition: background 0.2s ease;
+}
+
+.social-link:hover {
+    background: #f0f0f0;
+}
+
+.instagram-icon {
+    width: 32px;
+    height: 32px;
+    flex-shrink: 0;
+}
+
+.social-link span {
+    flex: 1;
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+.arrow-icon {
+    width: 20px;
+    height: 20px;
+    color: #9e9e9e;
+}
+
+/* Desktop Optimization */
+@media (min-width: 768px) {
+    .contact-card {
+        max-width: 700px;
+    }
+
+    .card-header {
+        padding: 50px 40px 40px;
+    }
+
+    .card-body {
+        padding: 35px 40px;
+    }
+
+    .profile-photo {
+        width: 140px;
+        height: 140px;
+    }
+
+    .doctor-name {
+        font-size: 2rem;
+    }
+
+    .action-btn {
+        width: 55px;
+        height: 55px;
+    }
+
+    .action-btn svg {
+        width: 26px;
+        height: 26px;
+    }
+
+    .contact-label {
+        font-size: 0.8rem;
+    }
+
+    .contact-value {
+        font-size: 1rem;
+    }
+}
+
+/* Responsive Mobile */
+@media (max-width: 480px) {
+    .contact-card {
+        max-width: 100%;
+        border-radius: 0;
+    }
+
+    .main-page {
+        padding: 0;
+    }
+
+    .card-body {
+        padding: 25px 20px;
+    }
+
+    .doctor-name {
+        font-size: 1.5rem;
+    }
+
+    .company-name {
+        font-size: 1.3rem;
+    }
+
+    .brand-name {
+        font-size: 1.8rem;
+    }
+
+    .logo-circle {
+        width: 150px;
+        height: 150px;
+    }
+}
+
+@media (max-width: 360px) {
+    .card-body {
+        padding: 20px 15px;
+    }
+
+    .contact-value {
+        font-size: 0.9rem;
+    }
+
+    .action-btn {
+        width: 45px;
+        height: 45px;
+    }
+
+    .add-contact-btn {
+        font-size: 0.95rem;
+        padding: 12px 18px;
+    }
+}
